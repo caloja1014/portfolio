@@ -1,4 +1,10 @@
-:root {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -103,5 +109,27 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+} */
+
+@layer base {
+  :root {
+    --color-primary: 10, 25, 47;
+      --color-secondary: 58, 148, 138;
+      --color-tertiary: 204, 214, 246;
+      --color-quaternary: 136, 146, 176;
+      --color-quinary: 130, 141, 170;
+      --body-color: 233, 233, 233;
+    
+  }
+  *{
+    @apply font-source-sans-pro;
+  }
+  button{
+    background-color: rgb(var(--color-primary));
+    color: rgb(var(--color-tertiary));
+    padding: 8px 16px;
+    border-radius: 0.5rem;
+    font-weight: bold;
   }
 }

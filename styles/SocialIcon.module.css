@@ -1,0 +1,8 @@
+.iconSize {
+  font-size: 70px;
+}
+@media only screen and (max-width: 725px) {
+    .iconSize {
+      font-size: 50px;
+    }
+  }
