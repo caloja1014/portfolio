@@ -10,22 +10,22 @@ import styles from "@/styles/Home.module.css";
 const contactLinks = [
   {
     Icon: AiFillGithub,
-    link: "",
+    link: "https://github.com/caloja1014",
     description: "@caloja1014",
   },
   {
     Icon: AiOutlineTwitter,
-    link: "",
+    link: "https://twitter.com/caloja1014",
     description: "@caloja1014",
   },
   {
     Icon: AiFillLinkedin,
-    link: "",
+    link: "https://www.linkedin.com/in/carlosloja/",
     description: "@carlosloja",
   },
   {
     Icon: HiMail,
-    link: "",
+    link: "mailto:caloja@espol.edu.ec",
     description: "caloja@espol.edu.ec",
   },
 ];

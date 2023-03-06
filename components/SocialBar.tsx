@@ -6,17 +6,17 @@ const socialList = [
   {
     name: "GitHub",
     Icon: AiFillGithub,
-    link: "https://www.github.com/yourgithub",
+    link: "https://github.com/caloja1014",
   },
   {
     name: "Twitter",
     Icon: AiOutlineTwitter,
-    link: "https://www.twitter.com/yourtwitter",
+    link: "https://twitter.com/caloja1014",
   },
   {
     name: "LinkedIn",
     Icon: AiFillLinkedin,
-    link: "https://www.linkedin.com/yourlinkedin",
+    link: "https://www.linkedin.com/in/carlosloja/",
   },
 ];
 

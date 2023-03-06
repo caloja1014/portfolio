@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -43,6 +45,7 @@ const NavBar = () => {
   const handleNav = () => {
     setNav(!nav);
   };
+  const router = useRouter();
   useEffect(() => {
     const newCurrentLink = navItems.findIndex(
       (item) => item.link === window.location.pathname
@@ -50,7 +53,9 @@ const NavBar = () => {
     if (currentLink !== newCurrentLink){
       setCurrentLink(newCurrentLink);
     };
-  }, []);
+  }, [
+    router.pathname
+  ]);
   return (
     <div className="z-20 flex p-2 bg-primary text-tertiary h-[100px]">
       <div className="flex items-center">

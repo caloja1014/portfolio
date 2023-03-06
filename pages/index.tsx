@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import NavLogo from '../public/images/logo_nav.png';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -31,7 +32,10 @@ export default function Home() {
             className='mb-8' 
             />
           </div>
-          <button className='px-16 py-4 text-2xl'>Projects</button>
+          <button 
+          className='px-16 py-4 text-2xl'>
+            <Link href="/projects">Projects</Link>
+            </button>
         </div>
       </main>
     </>
