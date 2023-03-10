@@ -17,7 +17,8 @@
         "knowMe":"Vamos a conocernos",
         "skills": "Mis Habilidades",
         "programmingLanguages":"Lenguajes de Programación",
-        "descriptionKnowMe":"¡Hola! Mi nombre es Carlos Loja, soy Desarrollador Móvil y Full Stack. Desde que inicié mi carrera como ingeniero en informática he sentido una gran pasión por la programación, además soy de las personas que piensa que un buen proyecto hace al programador, por eso siempre estoy dispuesto a aceptar nuevos retos y resolverlos, con la mayor calidad posible. Estoy abierto a oportunidades laborales o proyectos independientes donde pueda contribuir, crecer, aprender y compartir mis conocimientos con otros. Si tienes una buena oportunidad que se relacione con mis habilidades y experiencia, no dudes en contactarme."
+        "descriptionKnowMeOne":"¡Hola! Mi nombre es Carlos Loja, soy Desarrollador Móvil y Full Stack. Desde que inicié mi carrera como ingeniero en informática he sentido una gran pasión por la programación, además soy de las personas que piensa que un buen proyecto hace al programador, por eso siempre estoy dispuesto a aceptar nuevos retos y resolverlos, con la mayor calidad posible.",
+        "descriptionKnowMeTwo":"Estoy abierto a oportunidades laborales o proyectos independientes donde pueda contribuir, crecer, aprender y compartir mis conocimientos con otros. Si tienes una buena oportunidad que se relacione con mis habilidades y experiencia, no dudes en contactarme."
     },
     "projects":{
         "title":"Proyectos",
@@ -36,11 +37,11 @@
         },
         "widsWebsite":{
             "title":"WIDS Website",
-            "description":"WiDS Guayaquil@ESPOL es un evento virtual."
+            "description":"Es una página web construida para brindar información sobre las conferencias del evento Mujeres en ciencia de datos."
         },
         "motorizadoApp":{
             "title":"Motorizado App",
-            "description":"Diseño y creación de la aplicación móvil y web en Ionic y Angular."
+            "description":"Aplicación móvil construida para un despacho de motorizados que realizan entregas a domicilio."
         }
     },
     "contact":{

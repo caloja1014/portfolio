@@ -9,12 +9,14 @@ import WidsImg from "../public/images/projects/wids.png";
 import ProjectContainer from "@/components/ProjectContainer";
 
 import styles from "@/styles/Home.module.css";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from 'next-i18next'
 
 const projectList = [
   {
-    title: "Meraki Gift",
+    title: "projects.meraki.title",
     description:
-      "A manageable web system for the Meraki Gift venture where you can enter your products, information and contact.",
+      "projects.meraki.description",
     technologies: [
       "Angular",
       "Express JS",
@@ -29,52 +31,52 @@ const projectList = [
     isVertical: false,
   },
   {
-    title: "Space Travelers",
+    title: "projects.spaceTravelers.title",
     description:
-      "A prototype of a game focused on learning the hazards that the astronauts could pass on  a trip to Mars.",
+      "projects.spaceTravelers.description",
     technologies: [
       "Adobe XD",
     ],
-    link: "",
+    link: "https://2021.spaceappschallenge.org/challenges/statements/the-trail-to-mars-can-you-keep-your-crew-alive/teams/space-travelers-1/project",
     githubLink: "",
     imgLink: SpaceTravelerImg,
     isMobile: true,
     isVertical: false,
   },
   {
-    title: "DEA App",
+    title: "projects.deaApp.title",
     description:
-      "DEA App is a mobile and desktop application using Flutter for the mobile part and Electron for desktop.",
+      "projects.deaApp.description",
     technologies: [
       "Flutter",
       "Dart",
       "Firebase",
       "Figma"
     ],
-    link: "",
+    link: "https://play.google.com/store/apps/details?id=com.dea.come_app",
     githubLink: "",
     imgLink: DeaImg,
     isMobile: true,
     isVertical: true,
   },
   {
-    title: "Wids Website",
+    title: "projects.widsWebsite.title",
     description:
-      "WiDS Guayaquil@ESPOL is a virtual event.",
+      "projects.widsWebsite.description",
     technologies: [
       "Drupal",
       "Apache"
     ],
-    link: "",
+    link: "https://2021.wids.espol.edu.ec/",
     githubLink: "",
     imgLink: WidsImg,
     isMobile: false,
     isVertical: true,
   },
   {
-    title: "Motorizado App",
+    title: "projects.motorizadoApp.title",
     description:
-      "Design and creation of the mobile and web app on Ionic and Angular.",
+      "projects.motorizadoApp.description",
     technologies: [
       "Ionic",
       "TypeScript",
@@ -89,21 +91,29 @@ const projectList = [
 ];
 
 const Projects = () => {
+  const { t } = useTranslation('common')
+
   return (
     <main className={styles.main}>
       <div className="md:mt-8">
         <TitlePage
-          title="Projects"
-          description="Here you will find information about my projects"
+          title={t("projects.title")}
+          description={t("projects.subtitle")}
         />
       </div>
       <div>
         {
-            projectList.map((project, index) => {
+            projectList.map(({
+              title,
+              description,
+              ...rest
+            }, index) => {
                 return (
                 <ProjectContainer 
                 key={index} 
-                {...project} 
+                title={t(title)}
+                description={t(description)}
+                {...rest} 
                 className="my-10" />)
             })
         }
@@ -113,3 +123,10 @@ const Projects = () => {
 };
 
 export default Projects;
+export async function getStaticProps({ locale }:{locale:string}) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import TechnologiesContainer from "@/components/TechnologiesContainer";
 import TitlePage from "@/components/TitlePage";
 
@@ -18,39 +19,32 @@ const techs = [
 ];
 
 const About = () => {
+  const { t } = useTranslation('common')
   return (
     <main className={styles.main}>
       <div className="md:mt-8">
         <TitlePage
-          title="About me"
-          description="Here you will find information about me and my skills"
+          title={t("about.title")}
+          description={t("about.subtitle")}
         />
       </div>
       <div className="flex mt-8 flex-col md:flex-row">
         <div className="md:w-1/2 py-2 md:px-8">
-          <h1 className="text-2xl font-bold mb-4">Get to know me</h1>
+          <h1 className="text-2xl font-bold mb-4">{t("about.knowMe")}</h1>
           <p className="text-left mb-6">
-            Hello! My name is Carlos Loja, I’m a Mobile and Full Stack
-            Developer. Since I started my career as a computer science engineer,
-            I have felt a great passion for programming, and I am also one of
-            the people who thinks that a good project makes the programmer, that
-            is why I am always willing to accept new challenges and solve them,
-            with the highest possible quality. 
+            {t("about.descriptionKnowMeOne")}
             <br></br>
-            I’m open to job opportunities or
-            independent projects where I can contribute, grow, learn and share
-            my knowledge with others. If you have a good opportunity that is
-            related to my skills and experience, don’t hesitate to contact me.
+            {t("about.descriptionKnowMeTwo")}
           </p>
           <button className='px-16 py-2 text-xl '>
             <Link
                 href="/contact"
-            >Contact</Link>
+            >{t("menu.contact")}</Link>
           </button>
 
         </div>
         <div className="md:w-1/2 py-2 md:px-8">
-            <h1 className="text-2xl font-bold mb-4">My skills</h1>
+            <h1 className="text-2xl font-bold mb-4">{t("about.skills")}</h1>
             {techs.map(({title,techs}, index) => {
                 return <TechnologiesContainer 
                 key={index} 
@@ -66,3 +60,10 @@ const About = () => {
 };
 
 export default About;
+export async function getStaticProps({ locale }:{locale:string}) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}

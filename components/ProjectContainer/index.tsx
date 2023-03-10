@@ -5,7 +5,7 @@ import { StaticImageData } from "next/image";
 import LaptopPlaceHolder from "../../public/images/placeholder/laptop.png";
 import MobileVerticalPlaceHolder from "../../public/images/placeholder/mobile_vertical.png";
 import MobileHorizontalPlaceHolder from "../../public/images/placeholder/mobile_horizontal.png";
-
+import {FiExternalLink} from "react-icons/fi";
 import Tag from "./Tag";
 
 const ProjectContainer = ({
@@ -87,10 +87,22 @@ const ProjectContainer = ({
         <h2 className="font-bold text-2xl mb-4">{title}</h2>
         <div className="flex  lg:flex-col flex-col-reverse">
           <p className="mb-4">{description}</p>
+          <div>
           <div className="flex flex-wrap">
             {technologies.map((tech, index) => {
               return <Tag key={index} name={tech} className="mr-4 mb-3" />;
             })}
+          </div>
+          {
+            link && (
+              <FiExternalLink 
+              className="text-2xl text-primary  cursor-pointer" 
+              onClick={() => {
+                window.open(link, "_blank");
+              }}
+              />
+            )
+          }
           </div>
         </div>
       </div>

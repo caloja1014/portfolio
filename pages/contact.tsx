@@ -4,7 +4,8 @@ import TitlePage from "@/components/TitlePage";
 import SocialIcon from "@/components/SocialIcon";
 import { AiFillGithub, AiOutlineTwitter, AiFillLinkedin } from "react-icons/ai";
 import { HiMail } from "react-icons/hi";
-
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import styles from "@/styles/Home.module.css";
 
 const contactLinks = [
@@ -31,12 +32,14 @@ const contactLinks = [
 ];
 
 const Contact = () => {
+  const { t } = useTranslation('common')
+
   return (
     <main className={styles.main}>
       <div className="md:mt-8">
         <TitlePage
-          title="Contact"
-          description="Here you will find my contact information"
+          title={t("contact.title")}
+          description={t("contact.subtitle")}
         />
       </div>
       <div className="flex md:flex-row flex-col justify-center items-center md:mt-32">
@@ -57,3 +60,10 @@ const Contact = () => {
 };
 
 export default Contact;
+export async function getStaticProps({ locale }:{locale:string}) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}

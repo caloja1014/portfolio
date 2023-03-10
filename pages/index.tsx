@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '@/styles/Home.module.css'
-import NavLogo from '../public/images/logo_nav.png';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
+import styles from '@/styles/Home.module.css'
+import NavLogo from '../public/images/logo_nav.png';
 export default function Home() {
 
   const { t } = useTranslation('common')
@@ -23,7 +23,7 @@ export default function Home() {
             {t("home.title")}
           </h1>
           <h3 className='sm:text-center font-semibold text-tertiary mb-8 sm:mx-[128px] mx-0 mr-20 text-base sm:text-2xl text-left'>
-            I’m a  Mobile and Full Stack Developer focused on building scalable applications according to customer requirements
+            {t("home.description")}
           </h3>
           <div className=''>
             <Image
@@ -36,14 +36,14 @@ export default function Home() {
           </div>
           <button
             className='px-16 py-4 text-2xl'>
-            <Link href="/projects">Projects</Link>
+            <Link href="/projects">{t("home.button")}</Link>
           </button>
         </div>
       </main>
     </>
   )
 }
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale }:{locale:string}) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
