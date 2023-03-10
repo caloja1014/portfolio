@@ -1,0 +1,50 @@
+{
+    "menu":{
+        "home": "Inicio",
+        "about":"Acerda de mi",
+        "contact":"Contacto",
+        "projects":"Proyectos",
+        "resume":"Curriculum"
+    },
+    "home":{
+        "title":"Hola, mi nombre es Carlos Loja",
+        "description":"Soy un Desarrollador Móvil y Full Stack enfocado en construir aplicaciones escalables de acuerdo a los requerimientos del cliente",
+        "button":"Proyectos"
+    },
+    "about":{
+        "title":"Acerca de mi",
+        "subtitle":"Aquí encontrarás información sobre mí y mis habilidades.",
+        "knowMe":"Vamos a conocernos",
+        "skills": "Mis Habilidades",
+        "programmingLanguages":"Lenguajes de Programación",
+        "descriptionKnowMe":"¡Hola! Mi nombre es Carlos Loja, soy Desarrollador Móvil y Full Stack. Desde que inicié mi carrera como ingeniero en informática he sentido una gran pasión por la programación, además soy de las personas que piensa que un buen proyecto hace al programador, por eso siempre estoy dispuesto a aceptar nuevos retos y resolverlos, con la mayor calidad posible. Estoy abierto a oportunidades laborales o proyectos independientes donde pueda contribuir, crecer, aprender y compartir mis conocimientos con otros. Si tienes una buena oportunidad que se relacione con mis habilidades y experiencia, no dudes en contactarme."
+    },
+    "projects":{
+        "title":"Proyectos",
+        "subtitle":"Aquí encontrarás información sobre mis proyectos.",
+        "meraki":{
+            "title":"Meraki Gift",
+            "description":"Un sistema web manejable para el emprendimiento Meraki Gift donde puede ingresar productos, información y contacto."
+        },
+        "spaceTravelers":{
+            "title":"Space Travelers",
+            "description":"Un prototipo de juego centrado en aprender los peligros que podrían atravesar los astronautas en un viaje a Marte."
+        },
+        "deaApp":{
+            "title":"DEA App",
+            "description":"DEA App es una aplicación móvil y de escritorio que utiliza Flutter para la parte móvil y Electron para el escritorio."
+        },
+        "widsWebsite":{
+            "title":"WIDS Website",
+            "description":"WiDS Guayaquil@ESPOL es un evento virtual."
+        },
+        "motorizadoApp":{
+            "title":"Motorizado App",
+            "description":"Diseño y creación de la aplicación móvil y web en Ionic y Angular."
+        }
+    },
+    "contact":{
+        "title":"Contacto",
+        "subtitle":"Aquí encontrarás información sobre cómo contactarme"
+    }
+}

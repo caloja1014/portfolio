@@ -1,0 +1,50 @@
+{
+    "menu":{
+        "home":"Home",
+        "about":"About",
+        "contact":"Contact",
+        "projects":"Projects",
+        "resume":"Resume"
+    },
+    "home":{
+        "title":"Hi, my name is Carlos Loja",
+        "description":"I’m a Mobile and Full Stack Developer focused on building scalable applications according to customer requirements",
+        "button":"Projects"
+    },
+    "about":{
+        "title":"About me",
+        "subtitle":"Here you will find information about me and my skills",
+        "knowMe":"Get to know me",
+        "skills": "My skills",
+        "programmingLanguages":"Programming Languages",
+        "descriptionKnowMe":"Hello! My name is Carlos Loja, I’m a Mobile and Full Stack Developer. Since I started my career as a computer science engineer, I have felt a great passion for programming, and I am also one of the people who thinks that a good project makes the programmer, that is why I am always willing to accept new challenges and solve them, with the highest possible quality. I’m open to job opportunities or independent projects where I can contribute, grow, learn and share my knowledge with others. If you have a good opportunity that is related to my skills and experience, don’t hesitate to contact me."
+    },
+    "projects":{
+        "title":"Projects",
+        "subtitle":"Here you will find information about my projects",
+        "meraki":{
+            "title":"Meraki Gift",
+            "description":"A manageable web system for the Meraki Gift venture where you can enter your products, information and contact."
+        },
+        "spaceTravelers":{
+            "title":"Space Travelers",
+            "description":"A prototype of a game focused on learning the hazards that the astronauts could pass on a trip to Mars."
+        },
+        "deaApp":{
+            "title":"DEA App",
+            "description":"DEA App is a mobile and desktop application using Flutter for the mobile part and Electron for desktop."
+        },
+        "widsWebsite":{
+            "title":"WIDS Website",
+            "description":"WiDS Guayaquil@ESPOL is a virtual event."
+        },
+        "motorizadoApp":{
+            "title":"Motorizado App",
+            "description":"Design and creation of the mobile and web app on Ionic and Angular."
+        }
+    },
+    "contact":{
+        "title":"Contact",
+        "subtitle":"Here you will find information about how to contact me"
+    }
+}

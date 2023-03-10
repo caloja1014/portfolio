@@ -20,13 +20,13 @@ const navItems = [
     active: true,
   },
   {
-    name: "Contact",
-    link: "/contact",
+    name: "Projects",
+    link: "/projects",
     active: true,
   },
   {
-    name: "Projects",
-    link: "/projects",
+    name: "Contact",
+    link: "/contact",
     active: true,
   },
   {
@@ -50,12 +50,18 @@ const NavBar = () => {
     const newCurrentLink = navItems.findIndex(
       (item) => item.link === window.location.pathname
     );
-    if (currentLink !== newCurrentLink){
+    if (currentLink !== newCurrentLink) {
       setCurrentLink(newCurrentLink);
-    };
-  }, [
-    router.pathname
-  ]);
+    }
+  }, [currentLink, router.pathname]);
+
+  const handleLocaleChange = (event: { target: { value: any } }) => {
+    const value = event.target.value;
+
+    router.push(router.route, router.asPath, {
+      locale: value,
+    });
+  };
   return (
     <div className="z-20 flex p-2 bg-primary text-tertiary h-[100px]">
       <div className="flex items-center">
@@ -67,7 +73,16 @@ const NavBar = () => {
           className="mr-4"
         />
         <span className="font-bold text-2xl">Carlos Loja</span>
+        <select
+          className="ml-4 text-tertiary font-bold px-2 bg-primary rounded py-2 cursor-pointer md:flex hidden"
+          onChange={handleLocaleChange}
+          value={router.locale}
+        >
+          <option value="en-US">English</option>
+          <option value="es-ES">Español</option>
+        </select>
       </div>
+
       <div className="flex-auto flex justify-end items-center">
         <ul className="md:flex hidden">
           {navItems.map((item, index) => (
@@ -105,15 +120,15 @@ const NavBar = () => {
             </Link>
           ))}
         </ul>
-        <div className="text-secondary font-bold px-8 border-2 rounded py-2 cursor-pointer md:flex hidden"
-        onClick={
-          () =>{
+        <div
+          className="text-secondary font-bold px-8 border-2 rounded py-2 cursor-pointer md:flex hidden"
+          onClick={() => {
             window.open("/resume.pdf", "_blank");
-          }
-        }
+          }}
         >
           Resume
         </div>
+
         {/* Hamburger Icon */}
         <div
           style={{ color: `rgb(var(--color-secondary))` }}
@@ -168,12 +183,11 @@ const NavBar = () => {
                 ))}
               </ul>
               <div className="w-[70%] mt-16">
-                <div className="text-secondary font-bold px-8 border-2 rounded py-4 cursor-pointer text-center"
-                onClick={
-                  () =>{
+                <div
+                  className="text-secondary font-bold px-8 border-2 rounded py-4 cursor-pointer text-center"
+                  onClick={() => {
                     window.open("/resume.pdf", "_blank");
-                  }
-                }
+                  }}
                 >
                   Resume
                 </div>

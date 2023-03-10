@@ -4,6 +4,8 @@ import TitlePage from "@/components/TitlePage";
 import MerakiImg from "../public/images/projects/meraki.png";
 import SpaceTravelerImg from "../public/images/projects/space_traveller.png";
 import DeaImg from "../public/images/projects/dea.png";
+import MotorizadoImg from "../public/images/projects/motorizado_1.png";
+import WidsImg from "../public/images/projects/wids.png";
 import ProjectContainer from "@/components/ProjectContainer";
 
 import styles from "@/styles/Home.module.css";
@@ -31,7 +33,7 @@ const projectList = [
     description:
       "A prototype of a game focused on learning the hazards that the astronauts could pass on  a trip to Mars.",
     technologies: [
-      "Figma",
+      "Adobe XD",
     ],
     link: "",
     githubLink: "",
@@ -52,6 +54,35 @@ const projectList = [
     link: "",
     githubLink: "",
     imgLink: DeaImg,
+    isMobile: true,
+    isVertical: true,
+  },
+  {
+    title: "Wids Website",
+    description:
+      "WiDS Guayaquil@ESPOL is a virtual event.",
+    technologies: [
+      "Drupal",
+      "Apache"
+    ],
+    link: "",
+    githubLink: "",
+    imgLink: WidsImg,
+    isMobile: false,
+    isVertical: true,
+  },
+  {
+    title: "Motorizado App",
+    description:
+      "Design and creation of the mobile and web app on Ionic and Angular.",
+    technologies: [
+      "Ionic",
+      "TypeScript",
+      "Firebase"
+    ],
+    link: "",
+    githubLink: "",
+    imgLink: MotorizadoImg,
     isMobile: true,
     isVertical: true,
   },
