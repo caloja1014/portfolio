@@ -6,6 +6,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import styles from '@/styles/Home.module.css'
 import NavLogo from '../public/images/logo_nav.png';
+import background from '../public/background.webp';
+
 export default function Home() {
 
   const { t } = useTranslation('common')
@@ -15,9 +17,33 @@ export default function Home() {
       <Head>
         <title>{t("menu.home")}</title>
       </Head>
+      <div className='absolute  w-full z-10'
+        style={
+          {
+            height: 'calc(100% - 100px)',
+          }
+        }
+      >
+        <Image
+          src={background}
+          alt='PCL Logo'
+          style={
+            {
+              objectFit: 'cover',
+              objectPosition: 'center',
+              height: '100%',
+              width: '100%',
+            }
+          }
+          priority={true}
+          className='mb-8'
+        />
+      </div>
       <main className={
-        `${styles.main} ${styles.backImage}`
+        `${styles.main} z-40 absolute !bg-none w-full`
+
       }>
+
         <div className='flex flex-col justify-center sm:items-center sm:mt-16 items-start'>
           <h1 className='text-secondary text-4xl sm:text-6xl font-bold mb-8 sm:mx-32  sm:text-center text-left'>
             {t("home.title")}
@@ -43,7 +69,7 @@ export default function Home() {
     </>
   )
 }
-export async function getStaticProps({ locale }:{locale:string}) {
+export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),

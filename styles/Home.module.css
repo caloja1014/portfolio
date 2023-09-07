@@ -4,12 +4,12 @@
   align-items: center;
   padding: 32px;
   min-height: calc(100vh - 100px);
-  background-color: rgb(var(--body-color));
+  background: none;
   
   background-size: contain;
 }
 .backImage{
-  background-image: url('/background.png');
+  background-image: url('/background.webp');
 }
 
 .description {
